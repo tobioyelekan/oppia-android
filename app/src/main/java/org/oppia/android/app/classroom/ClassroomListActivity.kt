@@ -63,11 +63,6 @@ class ClassroomListActivity :
     title = resourceHandler.getStringInLocale(R.string.classroom_list_activity_title)
   }
 
-  override fun onRestart() {
-    super.onRestart()
-    classroomListActivityPresenter.handleOnRestart()
-  }
-
   override fun onBackPressed() {
     val previousFragment =
       supportFragmentManager.findFragmentByTag(TAG_SWITCH_PROFILE_DIALOG)
