@@ -72,6 +72,7 @@ import org.oppia.android.util.platformparameter.EnableOnboardingFlowV2
 import org.oppia.android.util.platformparameter.PlatformParameterValue
 import org.oppia.android.util.profile.CurrentUserProfileIdIntentDecorator.extractCurrentUserProfileId
 import javax.inject.Inject
+import org.oppia.android.app.model.ProfileId
 
 /** Test tag for the classroom list screen. */
 const val CLASSROOM_LIST_SCREEN_TEST_TAG = "TEST_TAG.classroom_list_screen"
@@ -177,7 +178,7 @@ class ClassroomListFragmentPresenter @Inject constructor(
   /** Routes to the play story view for the first story in the given topic summary. */
   fun onTopicSummaryClicked(topicSummary: TopicSummary) {
     routeToTopicPlayStoryListener.routeToTopicPlayStory(
-      internalProfileId,
+      ProfileId.newBuilder().setInternalId(internalProfileId).build(),
       topicSummary.classroomId,
       topicSummary.topicId,
       topicSummary.firstStoryId

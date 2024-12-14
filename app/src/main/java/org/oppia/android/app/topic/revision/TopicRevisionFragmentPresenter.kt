@@ -15,6 +15,7 @@ import org.oppia.android.app.topic.revision.revisionitemviewmodel.TopicRevisionI
 import org.oppia.android.databinding.TopicRevisionFragmentBinding
 import org.oppia.android.databinding.TopicRevisionSummaryViewBinding
 import javax.inject.Inject
+import org.oppia.android.app.model.ProfileId
 
 /** The presenter for [TopicRevisionFragment]. */
 @FragmentScope
@@ -25,7 +26,7 @@ class TopicRevisionFragmentPresenter @Inject constructor(
   private val singleTypeBuilderFactory: BindableAdapter.SingleTypeBuilder.Factory
 ) : RevisionSubtopicSelector {
   private lateinit var binding: TopicRevisionFragmentBinding
-  private var internalProfileId: Int = -1
+  private lateinit var profileId: ProfileId
   private lateinit var topicId: String
   private val routeToReviewListener = activity as RouteToRevisionCardListener
   private var subtopicListSize: Int? = null
@@ -33,10 +34,10 @@ class TopicRevisionFragmentPresenter @Inject constructor(
   fun handleCreateView(
     inflater: LayoutInflater,
     container: ViewGroup?,
-    internalProfileId: Int,
+    profileId: ProfileId,
     topicId: String
   ): View? {
-    this.internalProfileId = internalProfileId
+    this.profileId = profileId
     this.topicId = topicId
     binding = TopicRevisionFragmentBinding.inflate(
       inflater,
@@ -45,7 +46,7 @@ class TopicRevisionFragmentPresenter @Inject constructor(
     )
 
     viewModel.setTopicId(this.topicId)
-    viewModel.setInternalProfileId(this.internalProfileId)
+    viewModel.setInternalProfileId(this.profileId)
 
     binding.revisionRecyclerView.apply {
       adapter = createRecyclerViewAdapter()
@@ -66,7 +67,7 @@ class TopicRevisionFragmentPresenter @Inject constructor(
 
   override fun onTopicRevisionSummaryClicked(subtopic: Subtopic) {
     routeToReviewListener.routeToRevisionCard(
-      internalProfileId,
+      profileId,
       topicId,
       subtopic.subtopicId,
       checkNotNull(subtopicListSize) { "Subtopic list size not found." }

@@ -7,6 +7,7 @@ import org.oppia.android.app.topic.RouteToRevisionCardListener
 import org.oppia.android.app.topic.revision.TopicRevisionFragment
 import org.oppia.android.app.topic.revisioncard.RevisionCardActivity
 import javax.inject.Inject
+import org.oppia.android.app.model.ProfileId
 
 /** Test Activity used for testing [TopicRevisionFragment]. */
 class TopicRevisionTestActivity :
@@ -23,7 +24,7 @@ class TopicRevisionTestActivity :
   }
 
   override fun routeToRevisionCard(
-    internalProfileId: Int,
+    profileId: ProfileId,
     topicId: String,
     subtopicId: Int,
     subtopicListSize: Int
@@ -31,7 +32,7 @@ class TopicRevisionTestActivity :
     startActivity(
       RevisionCardActivity.createRevisionCardActivityIntent(
         this,
-        internalProfileId,
+        profileId,
         topicId,
         subtopicId,
         subtopicListSize

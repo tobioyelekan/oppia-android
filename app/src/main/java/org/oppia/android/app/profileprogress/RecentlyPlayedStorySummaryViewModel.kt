@@ -3,6 +3,7 @@ package org.oppia.android.app.profileprogress
 import androidx.appcompat.app.AppCompatActivity
 import org.oppia.android.R
 import org.oppia.android.app.home.RouteToTopicPlayStoryListener
+import org.oppia.android.app.model.ProfileId
 import org.oppia.android.app.model.PromotedStory
 import org.oppia.android.app.shim.IntentFactoryShim
 import org.oppia.android.app.translation.AppLanguageResourceHandler
@@ -36,7 +37,7 @@ class RecentlyPlayedStorySummaryViewModel(
 
   fun onStoryItemClicked() {
     routeToTopicPlayStory(
-      internalProfileId, promotedStory.classroomId, promotedStory.topicId, promotedStory.storyId
+      ProfileId.newBuilder().setInternalId(internalProfileId).build(), promotedStory.classroomId, promotedStory.topicId, promotedStory.storyId
     )
   }
 
@@ -47,14 +48,14 @@ class RecentlyPlayedStorySummaryViewModel(
   }
 
   override fun routeToTopicPlayStory(
-    internalProfileId: Int,
+    profileId: ProfileId,
     classroomId: String,
     topicId: String,
     storyId: String
   ) {
     val intent = intentFactoryShim.createTopicPlayStoryActivityIntent(
       activity.applicationContext,
-      internalProfileId,
+      profileId.internalId,
       classroomId,
       topicId,
       storyId

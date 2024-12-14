@@ -19,6 +19,7 @@ import org.oppia.android.databinding.TopicPracticeHeaderViewBinding
 import org.oppia.android.databinding.TopicPracticeSubtopicBinding
 import org.oppia.android.domain.oppialogger.OppiaLogger
 import javax.inject.Inject
+import org.oppia.android.app.model.ProfileId
 
 /** The presenter for [TopicPracticeFragment]. */
 @FragmentScope
@@ -42,12 +43,12 @@ class TopicPracticeFragmentPresenter @Inject constructor(
     container: ViewGroup?,
     subtopicList: ArrayList<Int>,
     selectedSkillId: HashMap<Int, MutableList<String>>,
-    internalProfileId: Int,
+    profileId: ProfileId,
     topicId: String
   ): View? {
     this.topicId = topicId
     viewModel.setTopicId(this.topicId)
-    viewModel.setInternalProfileId(internalProfileId)
+    viewModel.setInternalProfileId(profileId)
 
     selectedSubtopicIdList = subtopicList
     skillIdHashMap = selectedSkillId
