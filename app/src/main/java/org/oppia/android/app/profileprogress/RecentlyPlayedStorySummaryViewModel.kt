@@ -37,7 +37,10 @@ class RecentlyPlayedStorySummaryViewModel(
 
   fun onStoryItemClicked() {
     routeToTopicPlayStory(
-      ProfileId.newBuilder().setInternalId(internalProfileId).build(), promotedStory.classroomId, promotedStory.topicId, promotedStory.storyId
+      profileId = ProfileId.newBuilder().setInternalId(internalProfileId).build(),
+      classroomId = promotedStory.classroomId,
+      topicId = promotedStory.topicId,
+      storyId = promotedStory.storyId
     )
   }
 

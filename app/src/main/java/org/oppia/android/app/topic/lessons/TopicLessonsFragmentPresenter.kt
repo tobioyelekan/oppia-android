@@ -278,7 +278,12 @@ class TopicLessonsFragmentPresenter @Inject constructor(
   }
 
   fun storySummaryClicked(storySummary: StorySummary) {
-    routeToStoryListener.routeToStory(profileId.internalId, classroomId, topicId, storySummary.storyId)
+    routeToStoryListener.routeToStory(
+      internalProfileId = profileId.internalId,
+      classroomId = classroomId,
+      topicId = topicId,
+      storyId = storySummary.storyId
+    )
   }
 
   fun selectChapterSummary(

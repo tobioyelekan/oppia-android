@@ -28,7 +28,11 @@ class OngoingTopicItemViewModel(
   }
 
   fun onTopicItemClicked() {
-    routeToTopic(ProfileId.newBuilder().setInternalId(internalProfileId).build(), topic.classroomId, topic.topicId)
+    routeToTopic(
+      profileId = ProfileId.newBuilder().setInternalId(internalProfileId).build(),
+      classroomId = topic.classroomId,
+      topicId = topic.topicId
+    )
   }
 
   fun computeStoryCountText(): String {

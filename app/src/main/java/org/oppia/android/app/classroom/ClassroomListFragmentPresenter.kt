@@ -51,6 +51,7 @@ import org.oppia.android.app.model.ClassroomSummary
 import org.oppia.android.app.model.LessonThumbnail
 import org.oppia.android.app.model.LessonThumbnailGraphic
 import org.oppia.android.app.model.Profile
+import org.oppia.android.app.model.ProfileId
 import org.oppia.android.app.model.ProfileType
 import org.oppia.android.app.model.TopicSummary
 import org.oppia.android.app.translation.AppLanguageResourceHandler
@@ -72,7 +73,6 @@ import org.oppia.android.util.platformparameter.EnableOnboardingFlowV2
 import org.oppia.android.util.platformparameter.PlatformParameterValue
 import org.oppia.android.util.profile.CurrentUserProfileIdIntentDecorator.extractCurrentUserProfileId
 import javax.inject.Inject
-import org.oppia.android.app.model.ProfileId
 
 /** Test tag for the classroom list screen. */
 const val CLASSROOM_LIST_SCREEN_TEST_TAG = "TEST_TAG.classroom_list_screen"

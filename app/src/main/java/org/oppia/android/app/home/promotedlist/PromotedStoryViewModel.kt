@@ -7,11 +7,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModel
 import org.oppia.android.R
 import org.oppia.android.app.home.RouteToTopicPlayStoryListener
+import org.oppia.android.app.model.ProfileId
 import org.oppia.android.app.model.PromotedStory
 import org.oppia.android.app.viewmodel.ObservableViewModel
 import org.oppia.android.domain.translation.TranslationController
 import java.util.Objects
-import org.oppia.android.app.model.ProfileId
 
 // TODO(#283): Add download status information to promoted-story-card.
 
