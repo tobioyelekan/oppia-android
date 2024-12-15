@@ -178,7 +178,7 @@ class TopicLessonsFragmentTest {
 
   @field:[Inject EnableExtraTopicTabsUi]
   lateinit var enableExtraTopicTabsUiValue: PlatformParameterValue<Boolean>
-  
+
   private lateinit var profileId: ProfileId
 
   @Before
