@@ -85,6 +85,7 @@ import org.robolectric.annotation.Config
 import org.robolectric.annotation.LooperMode
 import javax.inject.Inject
 import javax.inject.Singleton
+import org.oppia.android.app.model.ProfileId
 
 @RunWith(AndroidJUnit4::class)
 @LooperMode(LooperMode.Mode.PAUSED)
@@ -98,7 +99,7 @@ class RevisionCardActivityLocalTest {
   @Inject lateinit var fakeAnalyticsEventLogger: FakeAnalyticsEventLogger
   @Inject lateinit var testCoroutineDispatchers: TestCoroutineDispatchers
 
-  private val internalProfileId = 1
+  private val profileId = ProfileId.newBuilder().setInternalId(1).build()
   private val fractionsSubtopicListSize: Int = 4
 
   @Before
@@ -111,7 +112,7 @@ class RevisionCardActivityLocalTest {
     ActivityScenario.launch<RevisionCardActivity>(
       RevisionCardActivity.createRevisionCardActivityIntent(
         ApplicationProvider.getApplicationContext(),
-        internalProfileId,
+        profileId,
         FRACTIONS_TOPIC_ID,
         SUBTOPIC_TOPIC_ID,
         fractionsSubtopicListSize
