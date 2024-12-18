@@ -88,7 +88,7 @@ class TopicLessonsFragment :
       isDefaultStoryExpanded = stateArgs?.isDefaultStoryExpanded ?: false
     }
     val profileId =
-      arguments?.extractCurrentUserProfileId() ?: ProfileId.newBuilder().setInternalId(-1).build()
+      arguments?.extractCurrentUserProfileId() ?: ProfileId.getDefaultInstance()
 
     val args = arguments?.getProto(
       TOPIC_LESSONS_FRAGMENT_ARGUMENTS_KEY,

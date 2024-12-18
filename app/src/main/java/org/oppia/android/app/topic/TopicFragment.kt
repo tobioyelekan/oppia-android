@@ -36,7 +36,7 @@ class TopicFragment : InjectableFragment() {
       TopicFragmentArguments.getDefaultInstance()
     )
     val profileId =
-      arguments?.extractCurrentUserProfileId() ?: ProfileId.newBuilder().setInternalId(-1).build()
+      arguments?.extractCurrentUserProfileId() ?: ProfileId.getDefaultInstance()
 
     val classroomId = args?.classroomId ?: TEST_CLASSROOM_ID_0
     val topicId = args?.topicId ?: TEST_TOPIC_ID_0

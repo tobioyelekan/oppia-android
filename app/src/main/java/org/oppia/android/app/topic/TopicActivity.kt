@@ -46,7 +46,7 @@ class TopicActivity :
     super.onCreate(savedInstanceState)
     (activityComponent as ActivityComponentImpl).inject(this)
     profileId =
-      intent?.extractCurrentUserProfileId() ?: ProfileId.newBuilder().setInternalId(-1).build()
+      intent?.extractCurrentUserProfileId() ?: ProfileId.getDefaultInstance()
 
     val args = intent?.getProtoExtra(
       TOPIC_ACTIVITY_PARAMS_KEY,

@@ -51,7 +51,7 @@ class TopicRevisionFragment : InjectableFragment(), RevisionSubtopicSelector {
     savedInstanceState: Bundle?
   ): View? {
     val profileId =
-      arguments?.extractCurrentUserProfileId() ?: ProfileId.newBuilder().setInternalId(-1).build()
+      arguments?.extractCurrentUserProfileId() ?: ProfileId.getDefaultInstance()
 
     val args = arguments?.getProto(
       TOPIC_REVISION_FRAGMENT_ARGUMENTS_KEY,
