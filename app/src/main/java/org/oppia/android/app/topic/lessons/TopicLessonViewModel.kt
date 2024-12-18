@@ -77,7 +77,7 @@ class TopicLessonViewModel @Inject constructor(
     return itemList
   }
 
-  fun setInternalProfileId(profileId: ProfileId) {
+  fun setProfileId(profileId: ProfileId) {
     this.profileId = profileId
   }
 

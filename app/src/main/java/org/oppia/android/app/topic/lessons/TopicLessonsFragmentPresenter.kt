@@ -93,7 +93,7 @@ class TopicLessonsFragmentPresenter @Inject constructor(
       this.viewModel = topicLessonViewModel
     }
 
-    topicLessonViewModel.setInternalProfileId(profileId)
+    topicLessonViewModel.setProfileId(profileId)
     topicLessonViewModel.setTopicId(topicId)
     topicLessonViewModel.setStoryId(storyId)
 

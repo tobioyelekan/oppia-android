@@ -72,7 +72,7 @@ class TopicRevisionViewModel @Inject constructor(
     this.topicId = topicId
   }
 
-  fun setInternalProfileId(profileId: ProfileId) {
+  fun setProfileId(profileId: ProfileId) {
     this.profileId = profileId
   }
 }

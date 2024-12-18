@@ -46,7 +46,7 @@ class TopicRevisionFragmentPresenter @Inject constructor(
     )
 
     viewModel.setTopicId(this.topicId)
-    viewModel.setInternalProfileId(this.profileId)
+    viewModel.setProfileId(this.profileId)
 
     binding.revisionRecyclerView.apply {
       adapter = createRecyclerViewAdapter()
