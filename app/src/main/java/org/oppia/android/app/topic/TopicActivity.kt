@@ -45,8 +45,7 @@ class TopicActivity :
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     (activityComponent as ActivityComponentImpl).inject(this)
-    profileId =
-      intent?.extractCurrentUserProfileId() ?: ProfileId.getDefaultInstance()
+    profileId = intent?.extractCurrentUserProfileId() ?: ProfileId.getDefaultInstance()
 
     val args = intent?.getProtoExtra(
       TOPIC_ACTIVITY_PARAMS_KEY,
