@@ -11,6 +11,7 @@ import org.oppia.android.app.model.ProfileEditFragmentArguments
 import org.oppia.android.util.extensions.getProto
 import org.oppia.android.util.extensions.putProto
 import javax.inject.Inject
+import org.oppia.android.app.model.ProfileId
 
 /** Fragment that contains Profile Edit Screen. */
 class ProfileEditFragment :
@@ -74,7 +75,7 @@ class ProfileEditFragment :
     profileEditFragmentPresenter.deleteProfile(internalProfileId)
   }
 
-  override fun loadProfileEditDeletionDialog(internalProfileId: Int) {
-    profileEditFragmentPresenter.handleLoadProfileDeletionDialog(internalProfileId)
+  override fun loadProfileEditDeletionDialog(profileId: ProfileId) {
+    profileEditFragmentPresenter.handleLoadProfileDeletionDialog(profileId.internalId)
   }
 }
