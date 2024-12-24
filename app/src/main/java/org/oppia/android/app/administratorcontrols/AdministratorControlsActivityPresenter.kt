@@ -10,15 +10,15 @@ import org.oppia.android.app.administratorcontrols.appversion.AppVersionFragment
 import org.oppia.android.app.administratorcontrols.learneranalytics.ProfileAndDeviceIdFragment
 import org.oppia.android.app.drawer.NavigationDrawerFragment
 import org.oppia.android.app.model.AdministratorControlActivityStateBundle
+import org.oppia.android.app.model.ProfileId
 import org.oppia.android.app.settings.profile.LoadProfileEditDeletionDialogListener
 import org.oppia.android.app.settings.profile.ProfileEditFragment
 import org.oppia.android.app.settings.profile.ProfileListFragment
 import org.oppia.android.app.translation.AppLanguageResourceHandler
 import org.oppia.android.databinding.AdministratorControlsActivityBinding
 import org.oppia.android.util.extensions.putProto
-import javax.inject.Inject
-import org.oppia.android.app.model.ProfileId
 import org.oppia.android.util.profile.CurrentUserProfileIdIntentDecorator.decorateWithUserProfileId
+import javax.inject.Inject
 
 /** The presenter for [AdministratorControlsActivity]. */
 @ActivityScope
@@ -213,7 +213,9 @@ class AdministratorControlsActivityPresenter @Inject constructor(
         }
       }
       .build()
-    outState.decorateWithUserProfileId(this@AdministratorControlsActivityPresenter.selectedProfileId)
+    outState.decorateWithUserProfileId(
+      this@AdministratorControlsActivityPresenter.selectedProfileId
+    )
     outState.putProto(ADMINISTRATOR_CONTROLS_ACTIVITY_STATE_KEY, args)
   }
 }
